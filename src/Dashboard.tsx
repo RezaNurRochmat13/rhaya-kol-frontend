@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import type { Post } from './types/dashboard';
 import { EngagementChart } from './components/EngagementChart';
@@ -51,14 +51,25 @@ const Dashboard = () => {
                   View Post <ExternalLink size={14} />
                 </a>
                 
-                <div className="grid grid-cols-3 gap-4 mt-4">
-                  <div className="bg-blue-50 p-3 rounded-lg">
-                    <p className="text-[10px] text-blue-600 uppercase font-bold">Latest Likes</p>
-                    <p className="text-lg font-bold text-blue-900">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+                  <div className="bg-blue-50 p-4 rounded-xl">
+                    <p className="text-xs text-blue-600 uppercase font-bold tracking-wide">Likes</p>
+                    <p className="text-2xl font-bold text-blue-900 mt-1">
                       {post.engagementLogs[post.engagementLogs.length - 1]?.likes || 0}
                     </p>
                   </div>
-                  {/* ... Tambahkan box untuk Comments/Shares jika perlu */}
+                  <div className="bg-green-50 p-4 rounded-xl">
+                    <p className="text-xs text-green-600 uppercase font-bold tracking-wide">Comments</p>
+                    <p className="text-2xl font-bold text-green-900 mt-1">
+                      {post.engagementLogs[post.engagementLogs.length - 1]?.comments || 0}
+                    </p>
+                  </div>
+                  <div className="bg-amber-50 p-4 rounded-xl">
+                    <p className="text-xs text-amber-600 uppercase font-bold tracking-wide">Shares</p>
+                    <p className="text-2xl font-bold text-amber-900 mt-1">
+                      {post.engagementLogs[post.engagementLogs.length - 1]?.shares || 0}
+                    </p>
+                  </div>
                 </div>
               </div>
 

@@ -1,5 +1,4 @@
 // src/components/icons/Instagram.tsx
-import React from 'react';
 
 export const Instagram = ({ size = 24, className = "" }) => (
   <svg
